@@ -10,6 +10,7 @@ using System.IO;
 using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace SLARSolver
 {
@@ -474,6 +475,9 @@ namespace SLARSolver
                     txt.Location = new Point(j * (cellSize + margin) + labelWidth, i * (25 + margin) + labelWidth);
                     txt.Tag = $"A_{i}_{j}"; // For identification
                     txt.Text = "0";
+
+                    txt.MaxLength = 15;
+
                     pnlMatrix.Controls.Add(txt);
 
                     // Column headers (top)
@@ -507,6 +511,9 @@ namespace SLARSolver
                 txtB.Location = new Point(size * (cellSize + margin) + labelWidth + 20, i * (25 + margin) + labelWidth);
                 txtB.Tag = $"b_{i}"; // For identification
                 txtB.Text = "0";
+
+                txtB.MaxLength = 15;
+
                 pnlMatrix.Controls.Add(txtB);
             }
         }
